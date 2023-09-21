@@ -1,20 +1,16 @@
+// swift-tools-version: 5.9
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
 import PackageDescription
 
 let package = Package(
-  name: "Hyperion-iOS",
-  platforms: [
-     .iOS(.v9)
-  ],
-  products: [
-    .library(
-      name: "Hyperion-iOS",
-      targets: ["HyperionCore", "SlowAnimations", "Measurements", "AttributesInspector"]
-    )
-  ],
-  targets: [
-    .target(name: "HyperionCore"),
-    .target(name: "SlowAnimations"),
-    .target(name: "Measurements"),
-    .target(name: "AttributesInspector")
-  ]
+    name: "Hyperion-iOS",
+    targets: [
+        // Targets are the basic building blocks of a package, defining a module or a test suite.
+        // Targets can depend on other targets in this package and products from dependencies.
+        .executableTarget(name: "HyperionCore"),
+        .executableTarget(name: "SlowAnimations"),
+        .executableTarget(name: "Measurements"),
+        .executableTarget(name: "AttributesInspector"),
+    ]
 )
